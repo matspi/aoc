@@ -16,7 +16,7 @@ for r in data:
     else:
       safe += 1
   if r[0] > r[1] and abs(r[0] - r[1]) <=3:
-    # increasing
+    # decreasing
     for i in range(1, len(r)-1):
       if r[i] <= r[i+1] or abs(r[i] - r[i+1]) > 3:
         break
