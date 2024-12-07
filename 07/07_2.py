@@ -16,7 +16,10 @@ with open("07/07_input.txt", "r") as f:
 
 print(f"Entries: {len(data)}, skipped: {skipped}")
 
-operations = [int.__add__, int.__mul__]
+def concat(a,b):
+  return int(f"{a}{b}")
+
+operations = [int.__add__, int.__mul__, concat]
 
 def check_entry(r, v):
   num_operations = len(v)-1
