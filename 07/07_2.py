@@ -1,9 +1,6 @@
 import itertools 
-import math
-from joblib import Parallel, delayed
-from joblib_progress import joblib_progress
+
 data=[]
-skipped=0
 with open("07/07_input.txt", "r") as f:
   for l in f.readlines():
     l, r = l.split(":")
@@ -14,8 +11,7 @@ with open("07/07_input.txt", "r") as f:
 
     data.append((result, values))
 
-print(f"Entries: {len(data)}, skipped: {skipped}")
-
+print(f"Entries: {len(data)}")
 def concat(a,b):
   return int(f"{a}{b}")
 
@@ -28,6 +24,8 @@ def check_entry(r, v):
     result = v[0]
     for i in range(len(ops)):
       result = ops[i](result, v[i+1])
+      if(result > r):
+        break
     if r == result:
         return r
   return 0
