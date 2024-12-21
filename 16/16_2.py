@@ -32,7 +32,6 @@ from collections import deque
 def dijkstra(visited, start_node, e):
     map = {}
     q = []
-    backtrack={}
     best=float("inf")
     lowest={(start_node.pos[0], start_node.pos[1], start_node.direction[0], start_node.direction[1]): 0}
     backtrack={}
